@@ -231,6 +231,7 @@ function initSmoothScroll() {
             const hamburger = document.querySelector('.navbar-hamburger');
             if (navLinks) navLinks.classList.remove('is-open');
             if (hamburger) hamburger.classList.remove('is-active');
+            document.body.style.overflow = '';
         });
     });
 }
@@ -239,11 +240,13 @@ function initSmoothScroll() {
 function initMobileMenu() {
     const hamburger = document.querySelector('.navbar-hamburger');
     const navLinks = document.querySelector('.navbar-links');
+    const body = document.body;
 
     if (!hamburger || !navLinks) return;
 
     hamburger.addEventListener('click', () => {
+        const isOpen = navLinks.classList.toggle('is-open');
         hamburger.classList.toggle('is-active');
-        navLinks.classList.toggle('is-open');
+        body.style.overflow = isOpen ? 'hidden' : '';
     });
 }
