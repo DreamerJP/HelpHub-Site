@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="HelpHub ISP: O sistema de gestão feito para provedores de internet que querem começar certo. Interface moderna, PIX integrado, bloqueio automático e acessos ilimitados por R$ 149,90/mês.">
+    <meta name="keywords"
+        content="HelpHub, ISP, provedor de internet, gestão de provedor, sistema para provedor, ERP provedor, PIX provedor, controle financeiro ISP">
+    <meta name="author" content="HelpHub">
+    <title>HelpHub ISP | Gestão completa para provedores de internet</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/webp" href="assets/img/logo_icone.webp">
+
+    <!-- Phosphor Icons -->
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- ════════════════════════════════════════════
+         NAVBAR
+         ════════════════════════════════════════════ -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="#" class="navbar-logo">
+                <img src="assets/img/logo_light.webp" alt="HelpHub" width="140" height="40">
+            </a>
+
+            <div class="navbar-links" id="navbar-links">
+                <a href="#dores">Por que mudar?</a>
+                <a href="#features">Funcionalidades</a>
+                <a href="#screenshots">O Sistema</a>
+                <a href="#comparacao">Comparativo</a>
+                <a href="#preco">Preço</a>
+                <a class="navbar-cta"
+                    href="https://wa.me/5547992330961?text=Ol%C3%A1%2C+gostaria+de+saber+mais+sobre+o+HelpHub"
+                    target="_blank" rel="noopener noreferrer" id="cta-navbar">
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+                        <path
+                            d="M12 0C5.373 0 0 5.373 0 12c0 2.127.555 4.126 1.526 5.863L.053 23.617a.5.5 0 00.601.596l5.653-1.528A11.934 11.934 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22a9.94 9.94 0 01-5.39-1.585l-.376-.233-3.9 1.055 1.037-3.84-.248-.395A9.96 9.96 0 012 12c0-5.514 4.486-10 10-10s10 4.486 10 10-4.486 10-10 10z" />
+                    </svg>
+                    Falar com consultor
+                </a>
+            </div>
+
+            <div class="navbar-hamburger" id="navbar-hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ════════════════════════════════════════════
+         HERO
+         ════════════════════════════════════════════ -->
+    <section class="hero" id="hero">
+        <canvas id="particles-canvas"></canvas>
+
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="dot"></span>
+                    Sistema de Gestão para ISPs
+                </div>
+
+                <h1>
+                    As ferramentas dos grandes provedores.<br>
+                    <span class="hero-typed-wrapper">
+                        Ao seu alcance de forma <span id="typed-target"></span>
+                    </span>
+                </h1>
+
+                <p class="hero-description">
+                    HelpHub é o sistema de gestão feito para provedores que querem começar certo.
+                    Oferecemos interface moderna, PIX integrado, bloqueio automático e acessos ilimitados
+                    para toda a equipe.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="https://wa.me/5547992330961?text=Ol%C3%A1%2C+gostaria+de+saber+mais+sobre+o+HelpHub"
+                        class="btn-primary" target="_blank" rel="noopener noreferrer" id="cta-hero-whatsapp">
+                        <svg viewBox="0 0 24 24" width="20" height="20">
+                            <path fill="currentColor"
+                                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+                            <path fill="currentColor"
+                                d="M12 0C5.373 0 0 5.373 0 12c0 2.127.555 4.126 1.526 5.863L.053 23.617a.5.5 0 00.601.596l5.653-1.528A11.934 11.934 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22a9.94 9.94 0 01-5.39-1.585l-.376-.233-3.9 1.055 1.037-3.84-.248-.395A9.96 9.96 0 012 12c0-5.514 4.486-10 10-10s10 4.486 10 10-4.486 10-10 10z" />
+                        </svg>
+                        Começar agora
+                    </a>
+                    <a href="#screenshots" class="btn-secondary" id="cta-hero-ver-sistema">
+                        <svg viewBox="0 0 256 256" width="18" height="18">
+                            <path fill="currentColor"
+                                d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm48.24-94.78-64-40A8,8,0,0,0,100,88v80a8,8,0,0,0,12.24,6.78l64-40a8,8,0,0,0,0-13.56ZM116,153.57V102.43L156.91,128Z" />
+                        </svg>
+                        Ver o sistema
+                    </a>
+                </div>
+
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <span class="number">13+</span>
+                        <span class="label">Módulos integrados</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="number">∞</span>
+                        <span class="label">Acessos simultâneos</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="number">0%</span>
+                        <span class="label">Propagandas</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-mockup">
+                <div class="mockup-browser">
+                    <div class="mockup-browser-bar">
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="url-bar">helphub.app/dashboard</span>
+                    </div>
+                    <div class="mockup-browser-body">
+                        <!-- ESPAÇO RESERVADO: substitua por screenshot do dashboard -->
+                        <img src="assets/img/Dashboard.webp" alt="Dashboard HelpHub" class="mockup-img">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════
+         SEÇÃO: DORES DO MERCADO
+         ════════════════════════════════════════════ -->
+    <section class="pain-section" id="dores">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-eyebrow">O problema</span>
+                <h2 class="section-title">Você já cansou disso.</h2>
+                <p class="section-subtitle">
+                    O mercado oferece sistemas caros, lentos e ultrapassados. Se você se identifica
+                    com alguma dessas dores, o HelpHub foi feito para você.
+                </p>
+            </div>
+
+            <div class="pain-grid">
+                <div class="pain-card reveal reveal-delay-1">
+                    <span class="pain-card-number">01</span>
+                    <div class="pain-card-icon">
+                        <i class="ph ph-hourglass-medium"></i>
+                    </div>
+                    <h3>Lentidão extrema</h3>
+                    <p>Sistemas do mercado travam nas funções mais críticas do dia a dia. Dor número um relatada por
+                        quem já tentou outros.</p>
+                </div>
+
+                <div class="pain-card reveal reveal-delay-2">
+                    <span class="pain-card-number">02</span>
+                    <div class="pain-card-icon">
+                        <i class="ph ph-paint-brush-broad"></i>
+                    </div>
+                    <h3>Interface datada</h3>
+                    <p>Visual de 2005 que não inspira confiança, nem nos funcionários, nem nos clientes do seu
+                        provedor.</p>
+                </div>
+
+                <div class="pain-card reveal reveal-delay-3">
+                    <span class="pain-card-number">03</span>
+                    <div class="pain-card-icon">
+                        <i class="ph ph-puzzle-piece"></i>
+                    </div>
+                    <h3>Módulos criados para vender mais</h3>
+                    <p>Sistemas cheios de funções criadas apenas para vender mais módulos e propagandas, projetados para
+                        forçar a contratação de pacotes maiores.</p>
+                </div>
+
+                <div class="pain-card reveal reveal-delay-4">
+                    <span class="pain-card-number">04</span>
+                    <div class="pain-card-icon">
+                        <i class="ph ph-users-four"></i>
+                    </div>
+                    <h3>Logins limitados e cobrados</h3>
+                    <p>Concorrentes cobram por cada funcionário que precisa acessar o sistema — um custo extra que
+                        cresce junto com sua equipe.</p>
+                </div>
+
+                <div class="pain-card reveal reveal-delay-5">
+                    <span class="pain-card-number">05</span>
+                    <div class="pain-card-icon">
+                        <i class="ph ph-shield-warning"></i>
+                    </div>
+                    <h3>Segurança comprometida</h3>
+                    <p>Sistemas antigos com bibliotecas desatualizadas e falhas de segurança já reportadas, muitas vezes tampadas
+                        com gambiarra.</p>
+                </div>
+
+                <div class="pain-card reveal reveal-delay-6">
+                    <span class="pain-card-number">06</span>
+                    <div class="pain-card-icon">
+                        <i class="ph ph-currency-circle-dollar"></i>
+                    </div>
+                    <h3>Barreira financeira</h3>
+                    <p>Grandes sistemas são inacessíveis para quem está começando. O provedor vai de planilha direto
+                        para a solução errada.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════
+         SEÇÃO: FEATURES / SOLUÇÃO
+         ════════════════════════════════════════════ -->
+    <section class="features-section" id="features">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-eyebrow">A solução</span>
+                <h2 class="section-title">Tudo que seu provedor precisa.<br><span class="gradient-text">Em um único
+                        sistema.</span></h2>
+                <p class="section-subtitle">
+                    Cada módulo foi desenhado para trabalhar junto. Sem módulos avulsos, sem surpresas,
+                    sem funcionalidades criadas apenas para vender mais.
+                </p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card reveal reveal-delay-1">
+                    <div class="feature-icon blue">
+                        <i class="ph ph-users-three"></i>
+                    </div>
+                    <h3>Gestão de Clientes</h3>
+                    <p>Cadastro completo com perfil operacional, abas contextuais, credenciais de rede, subcontas,
+                        equipamentos em comodato e histórico de auditoria.</p>
+                </div>
+
+                <div class="feature-card reveal reveal-delay-2">
+                    <div class="feature-icon green">
+                        <i class="ph ph-file-text"></i>
+                    </div>
+                    <h3>Contratos Inteligentes</h3>
+                    <p>Vínculo comercial entre cliente e plano com vigência, fidelidade e faturamento recorrente
+                        automático, sem gerar duplicidade de competência.</p>
+                </div>
+
+                <div class="feature-card reveal reveal-delay-3">
+                    <div class="feature-icon purple">
+                        <i class="ph ph-chart-line-up"></i>
+                    </div>
+                    <h3>Controle Financeiro</h3>
+                    <p>Dashboard financeiro com indicadores de inadimplência, previsão de entrada em 7/15/30 dias,
+                        gráficos de tendência e exportação de dados.</p>
+                </div>
+
+                <div class="feature-card reveal reveal-delay-4">
+                    <div class="feature-icon orange">
+                        <i class="ph ph-qr-code"></i>
+                    </div>
+                    <h3>PIX com as Menores Taxas</h3>
+                    <p>Arquitetura modular de drivers com suporte ao padrão Bacen API v2. Conecte seu banco diretamente
+                        e pague as menor taxas do mercado — sem intermediários.</p>
+                </div>
+
+                <div class="feature-card reveal reveal-delay-5">
+                    <div class="feature-icon red">
+                        <i class="ph ph-prohibit-inset"></i>
+                    </div>
+                    <h3>Bloqueio Automático</h3>
+                    <p>Rotina de madrugada detecta faturas vencidas e aplica o corte automaticamente na OLT ou MikroTik, garantindo a saúde financeira do seu provedor.</p>
+                </div>
+
+                <div class="feature-card reveal reveal-delay-6">
+                    <div class="feature-icon cyan">
+                        <i class="ph ph-headset"></i>
+                    </div>
+                    <h3>Chamados e Suporte</h3>
+                    <p>Fila com prioridades, protocolo único, andamentos com anexos, agendamento de visitas e
+                        atualização em tempo real via Live Sync, sem a necessidade de recarregar a página.</p>
+                </div>
+
+                <div class="feature-card reveal reveal-delay-7">
+                    <div class="feature-icon yellow">
+                        <i class="ph ph-calendar-check"></i>
+                    </div>
+                    <h3>Agenda e App Mobile</h3>
+                    <p>Calendário drag-and-drop com colunas por técnico, anti-colisão e geração de OS em PDF. App
+                        exclusivo com check-in GPS e envio de fotos para auditoria.</p>
+                </div>
+
+                <div class="feature-card reveal reveal-delay-8">
+                    <div class="feature-icon pink">
+                        <i class="ph ph-wifi-high"></i>
+                    </div>
+                    <h3>Gestão de Rede</h3>
+                    <p>Integração com OLTs (C-Data, Huawei, V-Sol), MikroTik e RADIUS. Diagnóstico de sinal, status
+                        online, mapa georreferenciado com LiveSync e SNMP.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════
+         SEÇÃO: SCREENSHOTS
+         ════════════════════════════════════════════ -->
+    <section class="screenshots-section" id="screenshots">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-eyebrow">Conheça o sistema</span>
+                <h2 class="section-title">Interface moderna que <span class="gradient-text">inspira confiança.</span>
+                </h2>
+                <p class="section-subtitle">
+                    Não é porque é acessível que é simples. Conheça a interface que seus funcionários
+                    e clientes vão usar no dia a dia.
+                </p>
+            </div>
+
+            <div class="screenshots-tabs reveal">
+                <button class="screenshot-tab is-active" data-tab="dashboard" id="tab-dashboard">Dashboard</button>
+                <button class="screenshot-tab" data-tab="clientes" id="tab-clientes">Clientes</button>
+                <button class="screenshot-tab" data-tab="financeiro" id="tab-financeiro">Financeiro</button>
+                <button class="screenshot-tab" data-tab="chamados" id="tab-chamados">Chamados</button>
+                <button class="screenshot-tab" data-tab="agenda" id="tab-agenda">Agenda</button>
+                <button class="screenshot-tab" data-tab="rede" id="tab-rede">Rede</button>
+                <button class="screenshot-tab" data-tab="mapa" id="tab-mapa">Mapa</button>
+            </div>
+
+            <div class="screenshot-display reveal">
+                <div class="screenshot-mockup">
+                    <div class="screenshot-bar">
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                    <div class="screenshot-body">
+                        <!-- ESPAÇO RESERVADO: Substitua o src de cada img pela captura real -->
+                        <img data-tab="dashboard" class="is-active" src="assets/img/Dashboard.webp"
+                            alt="Dashboard HelpHub">
+                        <img data-tab="clientes" src="assets/img/ClienteDash.webp" alt="Módulo de Clientes HelpHub">
+                        <img data-tab="financeiro" src="assets/img/FinanceiroDash.webp" alt="Módulo Financeiro HelpHub">
+                        <img data-tab="chamados" src="assets/img/ChamadosDash.webp" alt="Módulo de Chamados HelpHub">
+                        <img data-tab="agenda" src="assets/img/AgendaDash.webp" alt="Módulo de Agenda HelpHub">
+                        <img data-tab="rede" src="assets/img/RedeAddEquip.webp" alt="Módulo de Rede HelpHub">
+                        <img data-tab="mapa" src="assets/img/Mapa.webp" alt="Mapa Georreferenciado HelpHub">
+                    </div>
+                </div>
+                <p class="screenshot-caption">Dashboard com indicadores financeiros consolidados em tempo real</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════
+         SEÇÃO: TABELA COMPARATIVA
+         ════════════════════════════════════════════ -->
+    <section class="comparison-section" id="comparacao">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-eyebrow">Comparativo</span>
+                <h2 class="section-title">Por que trocar para o <span class="gradient-text">HelpHub?</span></h2>
+                <p class="section-subtitle">
+                    Enquanto outros sistemas ainda usam código com falhas de segurança já reportadas e
+                    só tampam o buraco, o HelpHub roda com tecnologia de última geração desde o primeiro dia.
+                </p>
+            </div>
+
+            <div class="comparison-table-wrapper reveal">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Diferencial</th>
+                            <th>Outros sistemas</th>
+                            <th>HelpHub</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Interface e visual</td>
+                            <td>Datada e pesada</td>
+                            <td>✦ Moderna e responsiva</td>
+                        </tr>
+                        <tr>
+                            <td>Velocidade</td>
+                            <td>Lentidão constante</td>
+                            <td>✦ Rápido por padrão</td>
+                        </tr>
+                        <tr>
+                            <td>Logins simultâneos</td>
+                            <td>Cobrado por funcionário</td>
+                            <td>✦ Ilimitados</td>
+                        </tr>
+                        <tr>
+                            <td>Segurança</td>
+                            <td>Bibliotecas antigas</td>
+                            <td>✦ Última versão, sem CVEs</td>
+                        </tr>
+                        <tr>
+                            <td>Módulos e propagandas</td>
+                            <td>Criados para vender mais</td>
+                            <td>✦ Zero propaganda</td>
+                        </tr>
+                        <tr>
+                            <td>Pagamento PIX</td>
+                            <td>Taxas altas</td>
+                            <td>✦ Menores taxas (Bacen)</td>
+                        </tr>
+                        <tr>
+                            <td>Bloqueio automático</td>
+                            <td>Manual ou caro</td>
+                            <td>✦ Automático por inadimplência</td>
+                        </tr>
+                        <tr>
+                            <td>Preço mensal</td>
+                            <td>Alto e inacessível</td>
+                            <td>✦ R$ 149,90 no plano único</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════
+         SEÇÃO: PREÇO
+         ════════════════════════════════════════════ -->
+    <section class="pricing-section" id="preco">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-eyebrow">Plano único</span>
+                <h2 class="section-title">Sem limite de funcionários.<br><span class="gradient-text-green">Sem
+                        surpresas.</span></h2>
+                <p class="section-subtitle">
+                    Todos os seus funcionários acessando ao mesmo tempo, sem limites e sem custo extra.
+                    Um preço justo pelo sistema completo.
+                </p>
+            </div>
+
+            <div class="pricing-card reveal">
+                <span class="pricing-badge">
+                    ✦ Tudo incluso
+                </span>
+
+                <h3 class="pricing-name">HelpHub <span class="gradient-text">Full</span></h3>
+
+                <div class="pricing-price">
+                    <span class="currency">R$</span>
+                    <span class="value">149</span>
+                    <span class="currency">,90</span>
+                    <span class="period">/mês</span>
+                </div>
+
+                <div class="pricing-features">
+                    <div class="pricing-feature">
+                        <span class="check">✓</span>
+                        <span>Todos os 13+ módulos inclusos</span>
+                    </div>
+                    <div class="pricing-feature">
+                        <span class="check">✓</span>
+                        <span>Acessos simultâneos ilimitados</span>
+                    </div>
+                    <div class="pricing-feature">
+                        <span class="check">✓</span>
+                        <span>PIX integrado com as menores taxas (driver Bacen)</span>
+                    </div>
+                    <div class="pricing-feature">
+                        <span class="check">✓</span>
+                        <span>Bloqueio e desbloqueio automático por inadimplência</span>
+                    </div>
+                    <div class="pricing-feature">
+                        <span class="check">✓</span>
+                        <span>Régua de cobrança automatizada (WhatsApp, E-mail, Telegram)</span>
+                    </div>
+                    <div class="pricing-feature">
+                        <span class="check">✓</span>
+                        <span>App mobile para técnicos (PWA com GPS e fotos)</span>
+                    </div>
+                    <div class="pricing-feature">
+                        <span class="check">✓</span>
+                        <span>Integração com OLT, MikroTik e RADIUS</span>
+                    </div>
+                    <div class="pricing-feature">
+                        <span class="check">✓</span>
+                        <span>Mapa georreferenciado com status em tempo real</span>
+                    </div>
+                    <div class="pricing-feature">
+                        <span class="check">✓</span>
+                        <span>Gestão de departamentos, agenda e OS em PDF</span>
+                    </div>
+                    <div class="pricing-feature">
+                        <span class="check">✓</span>
+                        <span>Backups automáticos com rotação de arquivos</span>
+                    </div>
+                    <div class="pricing-feature">
+                        <span class="check">✓</span>
+                        <span>Segurança de última geração, sem bibliotecas obsoletas</span>
+                    </div>
+                    <div class="pricing-feature">
+                        <span class="check">✓</span>
+                        <span>Zero propagandas, zero módulos extras cobrados</span>
+                    </div>
+                </div>
+
+                <a href="https://wa.me/5547992330961?text=Ol%C3%A1%2C+gostaria+de+assinar+o+HelpHub" class="pricing-cta"
+                    target="_blank" rel="noopener noreferrer" id="cta-pricing">
+                    <svg viewBox="0 0 24 24" width="20" height="20">
+                        <path fill="currentColor"
+                            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+                        <path fill="currentColor"
+                            d="M12 0C5.373 0 0 5.373 0 12c0 2.127.555 4.126 1.526 5.863L.053 23.617a.5.5 0 00.601.596l5.653-1.528A11.934 11.934 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22a9.94 9.94 0 01-5.39-1.585l-.376-.233-3.9 1.055 1.037-3.84-.248-.395A9.96 9.96 0 012 12c0-5.514 4.486-10 10-10s10 4.486 10 10-4.486 10-10 10z" />
+                    </svg>
+                    Assinar agora
+                </a>
+
+                <p class="pricing-note">Acessos simultâneos ilimitados já inclusos no plano. Sem fidelidade.</p>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- ════════════════════════════════════════════
+         SEÇÃO: CTA FINAL
+         ════════════════════════════════════════════ -->
+    <section class="cta-section" id="contato">
+        <div class="container">
+            <div class="cta-content reveal">
+                <span class="section-eyebrow" style="justify-content: center;">Pronto?</span>
+                <h2>Pronto para gerenciar seu provedor <span class="gradient-text">do jeito certo?</span></h2>
+                <p>Fale com a gente agora e descubra como o HelpHub pode transformar a operação do seu provedor, desde
+                    o primeiro cliente.</p>
+
+                <div class="cta-buttons">
+                    <a href="https://wa.me/5547992330961?text=Ol%C3%A1%2C+gostaria+de+saber+mais+sobre+o+HelpHub"
+                        class="btn-primary" target="_blank" rel="noopener noreferrer" id="cta-final-whatsapp">
+                        <svg viewBox="0 0 24 24" width="20" height="20">
+                            <path fill="currentColor"
+                                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+                            <path fill="currentColor"
+                                d="M12 0C5.373 0 0 5.373 0 12c0 2.127.555 4.126 1.526 5.863L.053 23.617a.5.5 0 00.601.596l5.653-1.528A11.934 11.934 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22a9.94 9.94 0 01-5.39-1.585l-.376-.233-3.9 1.055 1.037-3.84-.248-.395A9.96 9.96 0 012 12c0-5.514 4.486-10 10-10s10 4.486 10 10-4.486 10-10 10z" />
+                        </svg>
+                        Falar pelo WhatsApp
+                    </a>
+                    <a href="mailto:DreamerJPMG@gmail.com" class="btn-secondary" id="cta-final-email">
+                        <svg viewBox="0 0 256 256" width="18" height="18">
+                            <path fill="currentColor"
+                                d="M224,48H32a8,8,0,0,0-8,8V192a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A8,8,0,0,0,224,48ZM98.71,128,40,181.81V74.19Zm11.84,10.85,12,11.05a8,8,0,0,0,10.82,0l12-11.05,58,53.15H52.57ZM157.29,128,216,74.19V181.81ZM40,64H216l-88,80.89Z" />
+                        </svg>
+                        Enviar e-mail
+                    </a>
+                </div>
+
+                <p class="cta-trust">Sem compromisso. Resposta rápida, humana e sem robô.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════
+         FOOTER
+         ════════════════════════════════════════════ -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="assets/img/logo_light.webp" alt="HelpHub" width="120" height="34">
+                    <p>O sistema de gestão completo para provedores de internet que querem crescer sem complicação.
+                        Moderno, rápido e acessível.</p>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Navegação</h4>
+                    <a href="#dores">Por que mudar?</a>
+                    <a href="#features">Funcionalidades</a>
+                    <a href="#screenshots">O Sistema</a>
+                    <a href="#comparacao">Comparativo</a>
+                    <a href="#preco">Preço</a>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Contato</h4>
+                    <a href="https://wa.me/5547992330961?text=Ol%C3%A1%2C+gostaria+de+saber+mais+sobre+o+HelpHub"
+                        target="_blank" rel="noopener noreferrer">WhatsApp: (47) 99233-0961</a>
+                    <a href="mailto:DreamerJPMG@gmail.com">E-mail: DreamerJPMG@gmail.com</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 HelpHub. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
