@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Termos de Uso e Privacidade | HelpHub</title>
+    <link rel="icon" type="image/webp" href="assets/img/logo_icone.webp">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .terms-content {
+            padding: 120px 0 80px;
+            max-width: 800px;
+            margin: 0 auto;
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        .terms-content h1 {
+            color: var(--text-primary);
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+        }
+
+        .terms-content h2 {
+            color: var(--text-primary);
+            margin: 40px 0 20px;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .terms-content h2::before {
+            content: "";
+            width: 4px;
+            height: 24px;
+            background: var(--gradient-primary);
+            border-radius: 2px;
+        }
+
+        .terms-content p {
+            margin-bottom: 20px;
+        }
+
+        .terms-content ul {
+            margin-bottom: 20px;
+            padding-left: 20px;
+        }
+
+        .terms-content li {
+            margin-bottom: 10px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent);
+            text-decoration: none;
+            margin-bottom: 30px;
+            font-weight: 500;
+            transition: gap 0.3s;
+        }
+
+        .back-link:hover {
+            gap: 12px;
+        }
+
+        .highlight-box {
+            background: rgba(0, 102, 255, 0.05);
+            border-left: 4px solid var(--accent);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 30px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="navbar-logo">
+                <img src="assets/img/logo_light.webp" alt="HelpHub" width="140" height="40">
+            </a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="terms-content">
+            <a href="index.html" class="back-link">← Voltar para a página inicial</a>
+
+            <h1>Termos de Uso e Privacidade</h1>
+
+            <p>Última atualização: 03 de Abril de 2026</p>
+
+            <p>Bem-vindo ao <strong>HelpHub</strong>. Este documento define as regras de utilização do sistema e como
+                tratamos os seus dados. Ao contratar ou utilizar nosso software, você concorda integralmente com estes
+                termos.</p>
+
+            <div class="highlight-box">
+                O HelpHub é um software proprietário desenvolvido por <strong>Paulo Gama</strong>. O licenciamento é
+                feito na modalidade de subscrição (mensalidade), garantindo o direito de uso do sistema conforme
+                descrito abaixo.
+            </div>
+
+            <h2>1. Licenciamento e Propriedade</h2>
+            <p>O software HelpHub, incluindo seu código-fonte, design, interfaces e logomarcas, é de propriedade
+                exclusiva do desenvolvedor. A contratação confere ao usuário uma <strong>licença de uso não
+                    exclusiva</strong>.</p>
+            <ul>
+                <li>A transferência de licença entre terceiros é permitida, desde que o novo titular aceite estes termos
+                    e mantenha os pagamentos em dia.</li>
+                <li>A engenharia reversa ou tentativa de cópia da arquitetura do sistema é estritamente proibida.</li>
+            </ul>
+
+            <h2>2. Isenção de Responsabilidade (Garantia)</h2>
+            <p>O software é fornecido <strong>"como está" (as is)</strong>. Dada a natureza técnica e a dependência de
+                fatores externos, o desenvolvedor não garante 100% de disponibilidade ininterrupta.</p>
+            <ul>
+                <li><strong>Gateways de Pagamento:</strong> O HelpHub fornece a integração técnica com APIs de terceiros
+                    (como Asaas, Mercado Pago, etc). Não nos responsabilizamos por falhas, retenções de valores ou erros
+                    cometidos por estas plataformas.</li>
+                <li><strong>Conexão e Infraestrutura:</strong> A responsabilidade pela conexão com OLTs, MikroTiks e
+                    outros equipamentos de rede é do Licenciado.</li>
+                <li><strong>Perdas Financeiras:</strong> Em nenhuma hipótese o desenvolvedor será responsável por danos
+                    indiretos, lucros cessantes ou perda de dados decorrentes do uso do software.</li>
+            </ul>
+
+            <h2>3. Privacidade e Proteção de Dados (LGPD)</h2>
+            <p>A privacidade e a segurança dos dados são fundamentais no HelpHub:</p>
+            <ul>
+                <li><strong>Dados dos SEUS Clientes:</strong> Todo o conteúdo inserido no sistema (clientes, faturas, chamados) permanece de propriedade exclusiva sua. Devido à arquitetura técnica (banco de dados SQLite/MySQL), o desenvolvedor possui acesso técnico à estrutura, mas compromete-se com o <strong>sigilo absoluto</strong>.</li>
+                <li><strong>Confidencialidade:</strong> O desenvolvedor garante que não acessa, utiliza, compartilha ou comercializa as informações de operação do seu provedor para qualquer fim.</li>
+            </ul>
+
+            <h2>4. Pagamentos e Cancelamento</h2>
+            <p>O modelo de negócio é baseado em confiança e transparência:</p>
+            <ul>
+                <li>O plano é mensal e <strong>sem fidelidade</strong>.</li>
+                <li>O não pagamento da mensalidade resultará na suspensão temporária do acesso ao sistema até a
+                    regularização.</li>
+                <li>O usuário pode cancelar a assinatura a qualquer momento, sem multas, apenas interrompendo os
+                    pagamentos futuros.</li>
+            </ul>
+
+            <h2>5. Suporte Técnico</h2>
+            <p>O suporte é prestado preferencialmente via WhatsApp ou E-mail, em horário comercial, para auxílio em
+                dúvidas de configuração e correções de erros nativos do sistema.</p>
+
+            <div style="margin-top: 60px; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.1);">
+                <p>Dúvidas em relação a estes termos podem ser enviadas para: <strong>DreamerJPMG@gmail.com</strong></p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 HelpHub. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
