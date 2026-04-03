@@ -50,9 +50,10 @@
 html {
     scroll-behavior: smooth;
     font-size: 16px;
-    scroll-padding-top: 20px;
+    scroll-padding-top: 0; /* Changed to 0 for scroll-snap */
     overflow-x: hidden;
     width: 100%;
+    scroll-snap-type: y proximity; /* Proximity provides a better feel for long sections */
 }
 
 body {
@@ -598,6 +599,79 @@ ol {
 
 .mockup-browser-bar .dot:nth-child(3) {
     background: #28C840;
+}
+/* ── Side Dots Navigation ── */
+.side-nav {
+    position: fixed;
+    right: 32px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    pointer-events: none;
+}
+
+.side-nav-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--text-muted);
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: var(--transition-bounce);
+    pointer-events: auto;
+    position: relative;
+}
+
+.side-nav-dot::before {
+    content: attr(data-label);
+    position: absolute;
+    right: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--bg-card-solid);
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    opacity: 0;
+    visibility: hidden;
+    white-space: nowrap;
+    transition: var(--transition);
+    border: 1px solid var(--border-glass);
+}
+
+.side-nav-dot:hover::before {
+    opacity: 1;
+    visibility: visible;
+    right: 30px;
+}
+
+.side-nav-dot:hover {
+    background: var(--text-primary);
+    transform: scale(1.2);
+}
+
+.side-nav-dot.is-active {
+    background: var(--accent);
+    border-color: var(--accent-glow);
+    box-shadow: 0 0 15px var(--accent);
+    transform: scale(1.4);
+}
+
+/* Sections for scroll-snap */
+section {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+}
+
+@media (max-width: 991px) {
+    .side-nav {
+        display: none;
+    }
 }
 
 .mockup-browser-bar .url-bar {

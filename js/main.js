@@ -8,7 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
     initTypedEffect();
     initParticles();
     initScreenshotTabs();
-    initSmoothScroll();
+    initSideNav(); // New
+    initSmartScroll(); // New
     initMobileMenu();
 });
 
@@ -216,22 +217,136 @@ function initScreenshotTabs() {
     });
 }
 
-/* ── Smooth Scroll para âncoras ── */
-function initSmoothScroll() {
+/* ── Side Navigation Dots ── */
+function initSideNav() {
+    const sideNav = document.getElementById('side-nav');
+    const sections = document.querySelectorAll('section[id]');
+    if (!sideNav || !sections.length) return;
+
+    // Clear and Generate Dots
+    sideNav.innerHTML = '';
+    const sectionLabels = {
+        'hero': 'Início',
+        'dores': 'Por que mudar?',
+        'features': 'Funcionalidades',
+        'screenshots': 'O Sistema',
+        'comparacao': 'Comparativo',
+        'preco': 'Preço',
+        'contato': 'Contato'
+    };
+
+    sections.forEach(section => {
+        const dot = document.createElement('div');
+        dot.className = 'side-nav-dot';
+        dot.dataset.section = section.id;
+        dot.dataset.label = sectionLabels[section.id] || section.id;
+        
+        dot.addEventListener('click', () => {
+            section.scrollIntoView({ behavior: 'smooth' });
+        });
+        
+        sideNav.appendChild(dot);
+    });
+
+    // Observer to Highlight Active Dot
+    const observerOptions = {
+        threshold: 0.5,
+        rootMargin: '-50px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                document.querySelectorAll('.side-nav-dot').forEach(dot => {
+                    dot.classList.toggle('is-active', dot.dataset.section === entry.target.id);
+                });
+            }
+        });
+    }, observerOptions);
+
+    sections.forEach(section => observer.observe(section));
+}
+
+/* ── Smart Scroll Snap Logic ── */
+function initSmartScroll() {
+    const sections = Array.from(document.querySelectorAll('section[id]'));
+    let isScrolling = false;
+    let lastScrollTime = Date.now();
+
+    const smoothScrollTo = (target) => {
+        if (!target) return;
+        isScrolling = true;
+        target.scrollIntoView({ behavior: 'smooth' });
+        
+        // Block consecutive scroll events during transition
+        setTimeout(() => {
+            isScrolling = false;
+        }, 800);
+    };
+
+    window.addEventListener('wheel', (e) => {
+        if (isScrolling) {
+            e.preventDefault();
+            return;
+        }
+
+        const now = Date.now();
+        if (now - lastScrollTime < 100) return; // Debounce
+        lastScrollTime = now;
+
+        const direction = e.deltaY > 0 ? 'down' : 'up';
+        
+        // Find section currently in view
+        const currentSectionIndex = sections.findIndex(section => {
+            const rect = section.getBoundingClientRect();
+            // True if the section top is near viewport top, 
+            // OR if the section covers the top area of the viewport (long sections)
+            return (rect.top <= 50 && rect.bottom >= 50);
+        });
+
+        if (currentSectionIndex === -1) return;
+
+        const currentSection = sections[currentSectionIndex];
+        const rect = currentSection.getBoundingClientRect();
+        const winHeight = window.innerHeight;
+
+        // "Smart" logic: Only move to next section if we are at the boundaries
+        if (direction === 'down') {
+            const isAtSectionBottom = Math.floor(rect.bottom) <= winHeight + 10;
+            const isAtPageBottom = (window.innerHeight + window.scrollY) >= document.body.offsetHeight - 5;
+            
+            if (isAtSectionBottom && !isAtPageBottom && currentSectionIndex < sections.length - 1) {
+                e.preventDefault();
+                smoothScrollTo(sections[currentSectionIndex + 1]);
+            }
+        } else {
+            const isAtSectionTop = Math.floor(rect.top) >= -10;
+            
+            if (isAtSectionTop && currentSectionIndex > 0) {
+                e.preventDefault();
+                smoothScrollTo(sections[currentSectionIndex - 1]);
+            }
+        }
+    }, { passive: false });
+
+    // Handle Anchor Links (Navbar)
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             const href = this.getAttribute('href');
             if (href === '#') return;
-
-            // Deixamos o navegador tratar o scroll para respeitar o scroll-padding-top do CSS
-            // e.preventDefault() removido
-
-            // Fecha o menu mobile se estiver aberto
-            const navLinks = document.querySelector('.navbar-links');
-            const hamburger = document.querySelector('.navbar-hamburger');
-            if (navLinks) navLinks.classList.remove('is-open');
-            if (hamburger) hamburger.classList.remove('is-active');
-            document.body.style.overflow = '';
+            
+            const target = document.querySelector(href);
+            if (target) {
+                e.preventDefault();
+                smoothScrollTo(target);
+                
+                // Close mobile menu
+                const navLinks = document.querySelector('.navbar-links');
+                const hamburger = document.querySelector('.navbar-hamburger');
+                if (navLinks) navLinks.classList.remove('is-open');
+                if (hamburger) hamburger.classList.remove('is-active');
+                document.body.style.overflow = '';
+            }
         });
     });
 }
