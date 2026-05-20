@@ -206,9 +206,12 @@ function initScreenshotTabs() {
                     'dashboard': 'Dashboard com indicadores financeiros consolidados em tempo real',
                     'clientes': 'Perfil do cliente com abas contextuais e navegação cruzada',
                     'financeiro': 'Controle financeiro com previsão de entrada e inadimplência',
+                    'integracao-financeira': 'Configuração de gateway Asaas e webhook de pagamentos em tempo real',
                     'chamados': 'Fila de chamados com atualização em tempo real (Live Sync)',
                     'agenda': 'Calendário de visitas com Drag & Drop e status por cor',
                     'rede': 'Gestão de equipamentos de rede e balanceamento de carga',
+                    'cto': 'Gerenciamento físico de Caixas de Atendimento (CTO) e taxa de ocupação',
+                    'logs': 'Histórico de auditoria e registro de atividades do sistema',
                     'mapa': 'Mapa georreferenciado com status técnico ao vivo dos clientes'
                 };
                 caption.textContent = captions[target] || '';

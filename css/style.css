@@ -983,9 +983,9 @@ section {
 }
 
 .screenshot-tab {
-    padding: 10px 24px;
+    padding: 8px 16px;
     border-radius: 50px;
-    font-size: 0.88rem;
+    font-size: 0.82rem;
     font-weight: 600;
     color: var(--text-secondary);
     background: rgba(255, 255, 255, 0.04);
@@ -1671,4 +1671,51 @@ section {
 ::selection {
     background: var(--accent);
     color: #fff;
+}
+
+/* Subtle repeating diagonal watermark overlay (visible only on Clientes tab) */
+.screenshot-watermark-overlay {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 48px;
+    padding: 48px;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 5;
+    overflow: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    mix-blend-mode: difference; /* Inverts color automatically based on background for perfect readability! */
+}
+
+/* When the Clientes image is active, we trigger the watermark overlay opacity */
+.screenshot-body img[data-tab="clientes"].is-active ~ .screenshot-watermark-overlay {
+    opacity: 0.3; /* Adjusted opacity so it stands out clearly on both light and dark sections */
+    visibility: visible;
+}
+
+.watermark-text {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.45); /* High-contrast white that inverts to dark over light backgrounds */
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
+    transform: rotate(-25deg);
+    text-transform: uppercase;
+    white-space: nowrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    letter-spacing: 0.12em;
+}
+
+/* Responsive adjustments for watermark */
+@media (max-width: 576px) {
+    .watermark-text {
+        font-size: 0.85rem;
+    }
 }
